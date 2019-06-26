@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment" android:name="com.souravkumar.firebaseauthtutorial.ui.fragment.HomeFragment"
+              android:label="Home" tools:layout="@layout/fragment_home"/>
+    <fragment android:id="@+id/profileFragment" android:name="com.souravkumar.firebaseauthtutorial.ui.fragment.ProfileFragment"
+              android:label="Profile" tools:layout="@layout/fragment_profile">
+        <action android:id="@+id/actionVerifyPhone"
+                app:destination="@id/verifyPhoneFragment"/>
+    </fragment>
+    <fragment android:id="@+id/verifyPhoneFragment"
+              android:name="com.souravkumar.firebaseauthtutorial.ui.fragment.VerifyPhoneFragment"
+              android:label="Verify Phone" tools:layout="@layout/fragment_verify_phone">
+        <action android:id="@+id/actionPhoneVerified" app:destination="@id/profileFragment"/>
+    </fragment>
+</navigation>
